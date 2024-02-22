@@ -7,6 +7,7 @@ import NavigationBar from "../components/NavigationBar";
 import MissingComplaintForm from "../components/MissingComplaints/MissingComplaintForm";
 import MissingComplaintReport from "../components/MissingComplaints/MissingComplaintReport";
 import styles from "../styles/MissingComplaintDetailsPage.module.css";
+import { Button } from "antd";
 
 const MissingComplaintDetailsPage: React.FC = () => {
   const navigate = useNavigate();
@@ -32,6 +33,21 @@ const MissingComplaintDetailsPage: React.FC = () => {
     getAllUsersList();
     getMissingComplaintDetail();
   }, []);
+
+  const closeCase = async () => {
+    try {
+      const data = await request(
+        `/api/missingComplaints/${currentMissingComplaintId}/close`,
+        {
+          method: "PUT",
+        }
+      );
+      setIsCaseClosed(true);
+    } catch (error: any) {
+      const { status, message } = error;
+      console.log(message);
+    }
+  };
 
   const getMissingComplaintDetail = async () => {
     const detail = await request(
@@ -90,6 +106,9 @@ const MissingComplaintDetailsPage: React.FC = () => {
           ></MissingComplaintReport>
         )}
       </div>
+      <Button type="primary" onClick={closeCase} disabled={isCaseClosed}>
+        Close Case
+      </Button>
     </div>
   );
 };
