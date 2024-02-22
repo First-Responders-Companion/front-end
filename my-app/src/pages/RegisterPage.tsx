@@ -20,7 +20,7 @@ const RegisterPage: React.FC = () => {
     setLoading(true);
     setShowAlert(false);
     try {
-      await request("/api/users/all", {
+      await request("/api/users", {
         method: "POST",
         body: JSON.stringify(form),
       });
