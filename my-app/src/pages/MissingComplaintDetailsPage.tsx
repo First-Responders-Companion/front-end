@@ -27,7 +27,7 @@ const MissingComplaintDetailsPage: React.FC = () => {
     }
     const tkn = localStorage.getItem("token");
     if (tkn == null || tkn == "") {
-      navigate("/login");
+      navigate("/");
     }
     getAllUsersList();
     getMissingComplaintDetail();
@@ -59,7 +59,7 @@ const MissingComplaintDetailsPage: React.FC = () => {
   };
 
   const getAllUsersList = async () => {
-    const users = (await request("/api/users")) as IUser[];
+    const users = (await request("/api/users/all")) as IUser[];
     setAllUsersList(users);
   };
 
@@ -71,6 +71,10 @@ const MissingComplaintDetailsPage: React.FC = () => {
             ? "Missing Case Report"
             : "Missing Complaint"
         }
+        showBackButton={true}
+        onBack={() => {
+          navigate(-1);
+        }}
       />
       <div className={styles.missingComplaintFormFlexContainer}>
         {!isCaseClosed ? (

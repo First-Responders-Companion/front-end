@@ -85,7 +85,7 @@ const AddMissingComplaintPage: React.FC = () => {
   useEffect(() => {
     const tkn = localStorage.getItem("token");
     if (tkn == null || tkn == "") {
-      navigate("/login");
+      navigate("/");
     }
     getAllUsersList();
     setMissingComplaintInitialFormData(initialFormData);
@@ -126,7 +126,13 @@ const AddMissingComplaintPage: React.FC = () => {
 
   return (
     <div className={styles.addGroupContainer}>
-      <NavigationBar title={"Missing Complaint"} />
+      <NavigationBar
+        title={"Missing Complaint"}
+        showBackButton={true}
+        onBack={() => {
+          navigate(-1);
+        }}
+      />
       <div className={styles.groupFormFlexContainer}>
         <MissingComplaintForm
           onSubmit={showComplaintSubmitConfirmModal}

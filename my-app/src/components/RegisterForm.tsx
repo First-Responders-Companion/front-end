@@ -133,7 +133,7 @@ const RegisterForm: React.FC<IProps> = ({ onSubmit }) => {
       </Form.Item>
       <Form.Item>
         <Button block>
-          <Link to="/login">Login</Link>
+          <Link to="/">Login</Link>
         </Button>
       </Form.Item>
     </Form>

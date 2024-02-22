@@ -24,7 +24,7 @@ const MissingComplaintsPage: React.FC = () => {
   useEffect(() => {
     const tkn = localStorage.getItem("token");
     if (tkn == null || tkn == "") {
-      navigate("/login");
+      navigate("/");
     }
     getAllComplaints();
   }, []);
@@ -84,7 +84,13 @@ const MissingComplaintsPage: React.FC = () => {
 
   return (
     <div className={styles.MissingComplaintsPageContainer}>
-      <NavigationBar title={"Missing Complaints"} />
+      <NavigationBar
+        title={"Missing Complaints"}
+        showBackButton={true}
+        onBack={() => {
+          navigate("/");
+        }}
+      />
 
       <Tabs
         id="groups-tab"

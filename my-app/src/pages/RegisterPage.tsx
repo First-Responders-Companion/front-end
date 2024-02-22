@@ -20,12 +20,12 @@ const RegisterPage: React.FC = () => {
     setLoading(true);
     setShowAlert(false);
     try {
-      await request("/api/users", {
+      await request("/api/users/all", {
         method: "POST",
         body: JSON.stringify(form),
       });
 
-      navigator("/login");
+      navigator("/");
     } catch ({ status, message }) {
       window.alert(`Error: ${message} (${status})`);
     }
@@ -48,7 +48,6 @@ const RegisterPage: React.FC = () => {
       align="center"
       style={{ width: "100%", marginTop: "3rem" }}
     >
-      <img src="/logo.png" alt="logo" style={{ width: "10rem" }} />
       <Typography.Title level={2}>Register</Typography.Title>
       {showAlert && (
         <Alert
@@ -63,7 +62,7 @@ const RegisterPage: React.FC = () => {
               <Button
                 size="small"
                 type="default"
-                onClick={() => navigator("/login")}
+                onClick={() => navigator("/")}
               >
                 No
               </Button>

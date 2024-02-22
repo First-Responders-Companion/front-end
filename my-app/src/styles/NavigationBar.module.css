@@ -1,4 +1,6 @@
 .header {
-  padding: 16px 16px 16px 10px;
+  padding: 10px 10px 10px 10px;
   font-size: 14px;
+  background-color: aqua;
+  line-height: 1;
 }

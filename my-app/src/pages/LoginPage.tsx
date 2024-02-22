@@ -34,9 +34,9 @@ const LoginPage: React.FC = () => {
       localStorage.setItem("username", username);
       localStorage.setItem("role", role);
 
-      navigate("/");
+      navigate("/missing-complaints");
     } catch ({ status, message }) {
-      navigate("/login");
+      navigate("/");
       setLoading(false);
       alert(`Error: ${message} (${status})`);
     }
@@ -53,7 +53,6 @@ const LoginPage: React.FC = () => {
       align="center"
       style={{ width: "100%", marginTop: "5rem" }}
     >
-      <img src="/logo.png" alt="logo" style={{ width: "10rem" }} />
       <Typography.Title level={1}>Incident Response</Typography.Title>
       {loading ? <Loading /> : <LoginForm login={login} />}
     </Space>
