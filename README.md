@@ -8,3 +8,5 @@
 5. Open the web browser of your choice and type the URL: `http://localhost:3000/`.
 
 **Note:** This application is optimized for viewing in Mobile View on the web. Please adjust your screen resolution accordingly.
+
+**P.S.** To get the best experience using the entire Missing Complaints feature, I strongly suggest registering a couple of users with the Police role beforehand.
