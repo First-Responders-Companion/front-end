@@ -1,0 +1,14 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: end;
+  margin-top: auto;
+  padding-top: 12px;
+}

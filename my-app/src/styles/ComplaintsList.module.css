@@ -1,0 +1,13 @@
+.complaintsListItem {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.clickableDiv {
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}

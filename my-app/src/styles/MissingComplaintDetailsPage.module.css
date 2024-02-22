@@ -1,0 +1,11 @@
+.missingComplaintDetailsPageContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.missingComplaintFormFlexContainer {
+  padding: 16px;
+  flex-grow: 1;
+  min-height: 100px;
+}
